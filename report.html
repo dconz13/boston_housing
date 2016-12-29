@@ -12136,6 +12136,7 @@ Standard deviation of prices: $165,171.13
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <p>We use the training data so that we can input data into our model and then test it to judge the accuracy of the model. The model is going to eventually be used to predict real world outcomes so we aren't as concerned about the current data as much as we are about future data. Splitting the data into testing and training subsets allows us to get a metric on how accurate the model is with our current data so that we have an idea of the margin for error with future data.</p>
+<p>If you were to test the model with the same data you used to train it, you will get false results from the model. It will perfectly map the testing data to the training data. This only tells you that the current data is good but doesn't tell you how well the model will perform on future data.</p>
 
 </div>
 </div>
@@ -14630,7 +14631,7 @@ The graph with max_depth = 3 is the best out of the 4 options. The training data
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Cross validation allows you to break your data into multiple partitions of training and testing sets. Once broken up, the data is scored and then all the results are averaged to get the correct R^2 score. Doing it this way insures that all your data is used for both testing and training. The output from cross validation is used as the performance metric for the grid search. Generally, people will use a 10 fold cross validation which means the data is broken into 10 groups and each group is used for training exactly once. Doing this method for a performance metric helps to achieve low variance because it eliminates specifics with certain training sets.</p>
+<p><strong>Answer: </strong> K-fold cross validation allows you to break your data into k equal sized subsets of the original sample. One of the subsets is used to test the data and the rest of the k-1 sets are used to train the model. The result of the test is then held onto until the end. This process is repeated K times so that each set or "fold" can be used exactly once and the result of the test can be gathered. At the end, the results from all K tests are averaged into a final score. The advantage of this method is that all data can be used for testing and training. Doing this method for a performance metric also helps to achieve low variance because it eliminates outlier training sets.</p>
 
 </div>
 </div>
